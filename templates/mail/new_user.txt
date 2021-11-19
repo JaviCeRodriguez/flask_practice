@@ -1,0 +1,2 @@
+Hola! Ingresó un nuevo usuario :D
+Su nombre es {{ user }}

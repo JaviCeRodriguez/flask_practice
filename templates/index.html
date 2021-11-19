@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Index{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Hola, {% if name %}{{ name }}{% else %}👀{% endif %}! Aprendiendo Flask con matecitos 🧉</h1>
+    {% if not known %}
+    <p>Gusto en conocerte!</p>
+    {% else %}
+    <p>Feliz de verte otra vez!</p>
+    {% endif %}
+</div>
+{{ wtf.quick_form(form) }}
+<p>La fecha y hora local es {{ moment(current_time).format('LLL') }}.</p>
+<p>Eso fue {{ moment(current_time).fromNow(refresh=True) }}</p>
+{% endblock %}
